@@ -3,7 +3,7 @@ import yt_dlp
 import os
 import requests
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
-
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
 # 1. Initialize the database
 def init_db():
     conn = sqlite3.connect('bot_data.db')
@@ -14,7 +14,7 @@ def init_db():
 
 # 2. ShrinkMe API Function
 def shorten_url(url):
-    api_token = ""
+ BOT_TOKEN = os.environ.get''
     api_url = f"https://shrinkme.io/api?api={api_token}&url={url}"
     try:
         response = requests.get(api_url).json()
